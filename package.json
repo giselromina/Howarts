@@ -1,0 +1,27 @@
+{
+  "name": "howarts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/giselromina/Howarts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/giselromina/Howarts/issues"
+  },
+  "homepage": "https://github.com/giselromina/Howarts#readme",
+  "devDependencies": {
+    "@angular/cli": "^8.3.20"
+  },
+  "dependencies": {
+    "@angular/animations": "^8.2.14",
+    "@angular/cdk": "^8.2.3",
+    "@angular/material": "^8.2.3"
+  },
+  "description": ""
+}
