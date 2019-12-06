@@ -1,0 +1,45 @@
+<mat-toolbar color="primary" class="navbar mat-elevation-z5">
+  <mat-toolbar-row>
+    <button type="button" aria-label="Toggle sidenav" mat-mini-fab (click)="drawer.toggle()">
+      <!-- <mat-icon aria-label="Example icon-button with a heart icon">more_vert</mat-icon> -->
+    </button>
+    <span [routerLink]="['']">
+      <h2 class="title">Hogwarts</h2>
+    </span>
+
+  </mat-toolbar-row>
+  <mat-progress-bar *ngIf="loading" class="progress-bar" mode="indeterminate" color="accent"></mat-progress-bar>
+
+</mat-toolbar>
+
+
+
+<mat-sidenav-container class="sidenav-container">
+
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [mode]="'over'" [opened]="(isHandset$ | async)">
+    <div color="primary" class="profile-section">
+
+    </div>
+     <mat-nav-list>
+
+      <h2 matSubheader>Administración</h2>
+      <a mat-list-item [routerLink]="['category']" (click)="drawer.toggle()"><mat-icon class="icon_menu">category</mat-icon> Categorías</a>
+      <a mat-list-item [routerLink]="['shipment']" (click)="drawer.toggle()"><mat-icon class="icon_menu">local_shipping</mat-icon>Opciones de envío</a>
+      <a mat-list-item [routerLink]="['states']" (click)="drawer.toggle()"><mat-icon class="icon_menu">all_inbox</mat-icon>Estados de Orden</a>
+      <a mat-list-item [routerLink]="['payment']" (click)="drawer.toggle()"><mat-icon class="icon_menu">credit_card</mat-icon>Opciones de pago</a>
+      <a mat-list-item [routerLink]="['prices']" (click)="drawer.toggle()"><mat-icon class="icon_menu">apps</mat-icon>Listas de precios</a>
+      <a mat-list-item [routerLink]="['product']" (click)="drawer.toggle()"><mat-icon class="icon_menu">shopping_basket</mat-icon>Productos</a>
+      <a mat-list-item [routerLink]="['customer']" (click)="drawer.toggle()"><mat-icon class="icon_menu">group</mat-icon>Clientes</a>
+      <a mat-list-item [routerLink]="['sale']" (click)="drawer.toggle()"><mat-icon class="icon_menu">android</mat-icon>Promociones</a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+    <main class="margin-container">
+      <router-outlet></router-outlet>
+    </main>
+
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
