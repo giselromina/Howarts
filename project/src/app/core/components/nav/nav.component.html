@@ -1,10 +1,10 @@
 <mat-toolbar color="primary" class="navbar mat-elevation-z5">
   <mat-toolbar-row>
     <button type="button" aria-label="Toggle sidenav" mat-mini-fab (click)="drawer.toggle()">
-      <!-- <mat-icon aria-label="Example icon-button with a heart icon">more_vert</mat-icon> -->
+      <mat-icon aria-label="Example icon-button with a heart icon">more_vert</mat-icon>
     </button>
     <span [routerLink]="['']">
-      <h2 class="title">Hogwarts</h2>
+      <h2 class="title">Hogwarts Magical School</h2>
     </span>
 
   </mat-toolbar-row>
@@ -20,10 +20,10 @@
     <div color="primary" class="profile-section">
 
     </div>
-     <mat-nav-list>
+    <mat-nav-list>
 
-      <h2 matSubheader>Administración</h2>
-      <a mat-list-item [routerLink]="['category']" (click)="drawer.toggle()"><mat-icon class="icon_menu">category</mat-icon> Categorías</a>
+      <h2 matSubheader>Hogwarts Magical School</h2>
+      <a mat-list-item [routerLink]="['Houses']" (click)="drawer.toggle()"><mat-icon class="icon_menu">category</mat-icon> Categorías</a>
       <a mat-list-item [routerLink]="['shipment']" (click)="drawer.toggle()"><mat-icon class="icon_menu">local_shipping</mat-icon>Opciones de envío</a>
       <a mat-list-item [routerLink]="['states']" (click)="drawer.toggle()"><mat-icon class="icon_menu">all_inbox</mat-icon>Estados de Orden</a>
       <a mat-list-item [routerLink]="['payment']" (click)="drawer.toggle()"><mat-icon class="icon_menu">credit_card</mat-icon>Opciones de pago</a>

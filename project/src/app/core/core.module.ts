@@ -19,7 +19,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 @NgModule({
   declarations: [NavComponent],
   imports: [
-       CommonModule,
+    CommonModule,
     BrowserModule,
     RouterModule,
     BrowserAnimationsModule,
@@ -34,6 +34,6 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatGridListModule,
     MatProgressBarModule
   ],
-    exports: [NavComponent]
+  exports: [NavComponent]
 })
 export class CoreModule { }
