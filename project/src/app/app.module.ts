@@ -8,7 +8,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { GestureConfig } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-//import { BlockUIModule } from 'ng-block-ui';
 import 'hammerjs';
 import { HttpInterceptorProviders } from './core/interceptors';
 
