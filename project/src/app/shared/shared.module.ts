@@ -16,7 +16,6 @@ import { ListLayoutComponent } from './components/list-layout/list-layout.compon
 import { FormLayoutComponent } from './components/form-layout/form-layout.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
-import { CardHouseComponent } from './components/card-house/card-house.component';
 import { MatRippleModule } from '@angular/material/core';
 import { ImagePickerComponent } from './components/image-picker/image-picker.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -26,7 +25,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     TableComponent,
     ListLayoutComponent,
     FormLayoutComponent,
-    CardHouseComponent,
     ImagePickerComponent,
   ],
   imports: [
@@ -57,7 +55,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     MatInputModule,
     ListLayoutComponent,
     FormLayoutComponent,
-    CardHouseComponent,
     MatRippleModule,
     ImagePickerComponent
   ]

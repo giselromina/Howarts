@@ -3,20 +3,26 @@ import { CommonModule } from '@angular/common';
 import {HouseRoutingModule} from './house-routing.module';
 import {HouseListComponent} from './house-list/house-list.component';
 import { SharedModule } from '../shared/shared.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatGridListModule, MatExpansionModule, MatCardModule } from '@angular/material';
-
+import { CardHouseComponent } from './card-house/card-house.component';
+import {MatListModule} from '@angular/material/list';
+import { GrifiComponent } from './grifi/grifi.component';
+import { RavenComponent } from './raven/raven.component';
+import { SlyComponent } from './sly/sly.component';
+import { HufComponent } from './huf/huf.component';
 @NgModule({
-  declarations: [HouseListComponent],
+  declarations: [HouseListComponent, CardHouseComponent, GrifiComponent, RavenComponent, SlyComponent, HufComponent],
   imports: [
     CommonModule,
     SharedModule,
-    FormsModule,
     ReactiveFormsModule,
     MatGridListModule,
     MatExpansionModule,
     HouseRoutingModule,
-    MatCardModule
+    MatCardModule,
+    MatListModule
+
   ]
 })
 export class HouseModule { }
