@@ -1,8 +1,11 @@
-<mat-list>
-  <h3 mat-subheader>Houses</h3>
-  <mat-list-item *ngFor="let h of arrayHouseName">
-    <mat-icon mat-list-icon>house</mat-icon>
-    <h4>{{h}}</h4>
-  </mat-list-item>
-  <mat-divider></mat-divider>
+
+<mat-card>
+  <mat-card-title>Houses</mat-card-title>
+<mat-list role="list">
+
+  <mat-list-item  [routerLink]="['grifi']" ><mat-icon class="icon_menu">house</mat-icon>Gryffindor</mat-list-item>
+  <mat-list-item  [routerLink]="['sly']"><mat-icon class="icon_menu">house</mat-icon>Ravenclaw</mat-list-item>
+  <mat-list-item  [routerLink]="['raven']"><mat-icon class="icon_menu">house</mat-icon>Hufflepuff</mat-list-item>
+  <mat-list-item  [routerLink]="['huf']"><mat-icon class="icon_menu">house</mat-icon>Slytherin</mat-list-item>
 </mat-list>
+</mat-card>
