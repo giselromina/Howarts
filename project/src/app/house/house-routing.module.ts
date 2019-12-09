@@ -11,19 +11,19 @@ const routes: Routes = [
     component: HouseListComponent
   },
   {
-    path: '/grifi',
+    path: 'Gryffindor',
     component: GrifiComponent
   },
   {
-    path: '/sly',
-    component: SlyComponent
-  },
-  {
-    path: '/raven',
+    path: 'Ravenclaw',
     component: RavenComponent
   },
   {
-    path: '/huf',
+    path: 'Slytherin',
+    component: SlyComponent
+  },
+  {
+    path: 'Hufflepuff',
     component: HufComponent
   }
 ];

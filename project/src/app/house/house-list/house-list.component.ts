@@ -3,6 +3,8 @@ import { FormControl } from '@angular/forms';
 import { Component, OnInit, Input } from '@angular/core';
 import {House} from '../models/house.model';
 import { from } from 'rxjs';
+import {HouseList} from '../models/house-list.model';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-house-list',
@@ -10,17 +12,29 @@ import { from } from 'rxjs';
   styleUrls: ['./house-list.component.css']
 })
 export class HouseListComponent implements OnInit {
+dataHouseArray: House [] = [];
+dataList: HouseList[] = [];
 
-arrayHouseName: string [] = [];
-housesArray: House [] = [];
   constructor(
+    private route: ActivatedRoute,
+    private router: Router,
     private houseService: HouseService,
   ) { }
 
   ngOnInit() {
-      this.houseService.getHouseData().subscribe(res => {
-      this.housesArray = res;
+    this.houseService.getHouseData().subscribe(res => {
+      this.dataHouseArray = res;
+      this.dataHouseList();
     });
 
   }
+
+  dataHouseList() {
+    this.dataList = this.dataHouseArray.map(x => ({
+      name: x.name,
+      students: x.members.length
+    }));
+  }
+
+  goToList = (nameHouse: string) => this.router.navigate([nameHouse], {relativeTo: this.route});
 }

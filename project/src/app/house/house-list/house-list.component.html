@@ -1,11 +1,7 @@
 
 <mat-card>
-  <mat-card-title>Houses</mat-card-title>
-<mat-list role="list">
-
-  <mat-list-item  [routerLink]="['grifi']" ><mat-icon class="icon_menu">house</mat-icon>Gryffindor</mat-list-item>
-  <mat-list-item  [routerLink]="['sly']"><mat-icon class="icon_menu">house</mat-icon>Ravenclaw</mat-list-item>
-  <mat-list-item  [routerLink]="['raven']"><mat-icon class="icon_menu">house</mat-icon>Hufflepuff</mat-list-item>
-  <mat-list-item  [routerLink]="['huf']"><mat-icon class="icon_menu">house</mat-icon>Slytherin</mat-list-item>
+  <mat-card-title>Select a House</mat-card-title>
+<mat-list role="list" *ngFor="let item of dataList" >
+  <mat-list-item (click)="goToList(item.name)"><mat-icon class="icon_menu">house</mat-icon>{{item.name}} --  Members: {{item.students}}</mat-list-item>
 </mat-list>
 </mat-card>

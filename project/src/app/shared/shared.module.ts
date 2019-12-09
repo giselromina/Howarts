@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TableComponent } from './components/table/table.component';
+import { TableComponent } from './components/table-house-student/table.component';
 import {
   MatTableModule,
   MatPaginatorModule,
