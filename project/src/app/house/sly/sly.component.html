@@ -1,1 +1,3 @@
-<app-table></app-table>
+<app-list-layout [title]="'Slytherin Students'" [subtitle]="''" [canAdd]="false">
+    <app-table *ngIf="dataArray.length>0" [tableData]="tableData" [routeBack]="'/house'"></app-table>
+</app-list-layout>

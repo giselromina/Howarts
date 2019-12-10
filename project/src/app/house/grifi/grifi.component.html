@@ -1,4 +1,4 @@
 
-<app-table
-[router]="'/house'"
-[dataList]= dataTable></app-table>
+<app-list-layout [title]="'Griffyndor Students'" [subtitle]="''" [canAdd]="false">
+    <app-table *ngIf="dataArray.length>0" [tableData]="tableData" [routeBack]="'/house'"></app-table>
+</app-list-layout>

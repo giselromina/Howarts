@@ -1,49 +1,41 @@
-<mat-card>
-  <mat-form-field>
-    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-  </mat-form-field>
-
-  <table mat-table [dataSource]="dataList" class="mat-elevation-z8">
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef>Name</th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+<div>
+  <mat-table class="mat-elevation-z8" [dataSource]="dataSource" matSort aria-label="Elements">
+    <!-- Id Column -->
+    <ng-container matColumnDef="{{column}}" *ngFor="let column of tableData.headerRows">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>{{column | titlecase}}</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row[column] | translateBooleans}}</mat-cell>
     </ng-container>
-    <ng-container matColumnDef="bloodStatus">
-      <th mat-header-cell *matHeaderCellDef>Blood Status</th>
-      <td mat-cell *matCellDef="let element"> {{element.bloodStatus}} </td>
-    </ng-container>
-    <!-- <ng-container matColumnDef="role">
-      <th mat-header-cell *matHeaderCellDef>Role</th>
-      <td mat-cell *matCellDef="let element"> {{element.role}} </td>
-    </ng-container>
-    <ng-container matColumnDef="ministryOfMagic">
-      <th mat-header-cell *matHeaderCellDef>Ministry Of Magic</th>
-      <td mat-cell *matCellDef="let element"> {{element.ministryOfMagic}} </td>
-    </ng-container>
-    <ng-container matColumnDef="orderOfThePhoenix">
-      <th mat-header-cell *matHeaderCellDef>Order Of The Phoenix</th>
-      <td mat-cell *matCellDef="let element"> {{element.orderOfThePhoenix}} </td>
-    </ng-container>
-    <ng-container matColumnDef="dumbledoresArmy">
-      <th mat-header-cell *matHeaderCellDef>Dumbledore's Army </th>
-      <td mat-cell *matCellDef="let element"> {{element.dumbledoresArmy}} </td>
-    </ng-container>
-    <ng-container matColumnDef="deathEater">
-      <th mat-header-cell *matHeaderCellDef>Death Eater</th>
-      <td mat-cell *matCellDef="let element"> {{element.deathEater}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="especies">
-      <th mat-header-cell *matHeaderCellDef>Especies</th>
-      <td mat-cell *matCellDef="let element"> {{element.species}} </td>
-    </ng-container>-->
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-  <mat-card-actions>
-     <button mat-raised-button type="button" routerLinkActive="router"
-          class="btn btn-separator btn-round btn-info btn-full-round " matTooltip="Volver" (click)="goBack()">
-          <i class="material-icons">arrow_back</i>
+    <ng-container matColumnDef="acciones">
+      <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <button *ngIf="tableData.canEdit" color="primary" (click)="navigateToEdit(row.id)" mat-icon-button
+          aria-label="edit">
+          <mat-icon>edit</mat-icon>
         </button>
-  </mat-card-actions>
-</mat-card>
+        <button *ngIf="tableData.canRemove" (click)="openDialog(row.name, row.id)" color="warn" mat-icon-button
+          aria-label="remove">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button *ngIf="tableData.canLock"
+          (click)="openLockDialog(row[tableData.propertyToCheck], row.businessName, row.id)" color="warn"
+          mat-icon-button aria-label="remove">
+          <mat-icon>{{row[tableData.propertyToCheck] ? 'lock' : 'lock_open'}}</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnsToDisplay;"></mat-row>
+  </mat-table>
+  <mat-paginator class="mat-elevation-z8" #paginator [length]="itemsLength" [pageIndex]="0" [pageSize]="50"
+    [pageSizeOptions]="[25, 50, 100, 250]">
+  </mat-paginator>
+
+
+        <div class="btn">
+          <button mat-mini-fab color="accent" style="top: 10px;" (click)="goBack();">Back</button>
+        </div>
+
+
+
+</div>

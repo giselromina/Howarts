@@ -1,4 +1,6 @@
-import { NgModule } from '@angular/core';
+import { TranslateBooleansPipe } from './pipes/traslate-booleans.pipe';
+import { from } from 'rxjs';
+import { NgModule, PipeTransform } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TableComponent } from './components/table-house-student/table.component';
 import {
@@ -19,13 +21,17 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatRippleModule } from '@angular/material/core';
 import { ImagePickerComponent } from './components/image-picker/image-picker.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-
+import { DeleteDialogComponent } from './components/delete-dialog/delete-dialog.component';
+import { LockDialogComponent } from './components/lock-dialog/lock-dialog.component';
 @NgModule({
   declarations: [
     TableComponent,
     ListLayoutComponent,
     FormLayoutComponent,
     ImagePickerComponent,
+    TranslateBooleansPipe,
+    DeleteDialogComponent,
+    LockDialogComponent
   ],
   imports: [
     CommonModule,
