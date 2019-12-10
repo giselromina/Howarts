@@ -29,7 +29,6 @@ import { CardComponent } from './components/card/card.component';
     TableComponent,
     ListLayoutComponent,
     FormLayoutComponent,
-
     TranslateBooleansPipe,
     DeleteDialogComponent,
     LockDialogComponent,
@@ -64,6 +63,7 @@ import { CardComponent } from './components/card/card.component';
     ListLayoutComponent,
     FormLayoutComponent,
     MatRippleModule,
+    CardComponent
 
   ]
 })
