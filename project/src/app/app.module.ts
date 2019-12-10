@@ -11,7 +11,6 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import 'hammerjs';
 import { HttpInterceptorProviders } from './core/interceptors';
 
-
 declare var Hammer: any;
 @Injectable()
 export class HammerConfig extends GestureConfig {

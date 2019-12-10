@@ -2,7 +2,7 @@ import { TranslateBooleansPipe } from './pipes/traslate-booleans.pipe';
 import { from } from 'rxjs';
 import { NgModule, PipeTransform } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TableComponent } from './components/table-house-student/table.component';
+import { TableComponent } from './components/data-table/table.component';
 import {
   MatTableModule,
   MatPaginatorModule,
@@ -19,19 +19,21 @@ import { FormLayoutComponent } from './components/form-layout/form-layout.compon
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatRippleModule } from '@angular/material/core';
-import { ImagePickerComponent } from './components/image-picker/image-picker.component';
+
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DeleteDialogComponent } from './components/delete-dialog/delete-dialog.component';
 import { LockDialogComponent } from './components/lock-dialog/lock-dialog.component';
+import { CardComponent } from './components/card/card.component';
 @NgModule({
   declarations: [
     TableComponent,
     ListLayoutComponent,
     FormLayoutComponent,
-    ImagePickerComponent,
+
     TranslateBooleansPipe,
     DeleteDialogComponent,
-    LockDialogComponent
+    LockDialogComponent,
+    CardComponent
   ],
   imports: [
     CommonModule,
@@ -62,7 +64,7 @@ import { LockDialogComponent } from './components/lock-dialog/lock-dialog.compon
     ListLayoutComponent,
     FormLayoutComponent,
     MatRippleModule,
-    ImagePickerComponent
+
   ]
 })
 export class SharedModule { }
