@@ -7,7 +7,6 @@ import {
   MatGridListModule, MatExpansionModule, MatCardModule, MatSidenavModule,
   MatMenuModule, MatToolbarModule, MatIconModule, MatButtonModule, MatProgressBarModule
 } from '@angular/material';
-import { CardComponent } from '../shared/components/card/card.component';
 import { GryffindorStudentComponent } from './gryffindor-student/gryffindor-student.component';
 import { SlytherinStudentComponent } from './slytherin-student/slytherin-student.component';
 import { HufflepuffStudentComponent } from './hufflepuff-student/hufflepuff-student.component';
@@ -15,7 +14,7 @@ import { RavenclawStudentComponent } from './ravenclaw-student/ravenclaw-student
 
 
 @NgModule({
-  declarations: [StudentRouteModule, GryffindorStudentComponent,
+  declarations: [ GryffindorStudentComponent,
    SlytherinStudentComponent, HufflepuffStudentComponent, RavenclawStudentComponent],
   imports: [
 
@@ -31,7 +30,7 @@ import { RavenclawStudentComponent } from './ravenclaw-student/ravenclaw-student
     MatIconModule,
     MatButtonModule,
     MatProgressBarModule,
-    CardComponent
+    StudentRouteModule
 
   ]
 })

@@ -3,14 +3,18 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
- {
+  {
     path: '',
     loadChildren: './dashboard/dashboard.module#DashboardModule'
   },
-  {
-    path: 'house',
-    loadChildren: './house/house.module#HouseModule'
-  }
+   {
+     path: 'house',
+     loadChildren: './house/house.module#HouseModule'
+   },
+  //  {
+  //    path: 'students',
+  //    loadChildren: '../student/student.module#StudentModule',
+  //  }
 ];
 
 @NgModule({

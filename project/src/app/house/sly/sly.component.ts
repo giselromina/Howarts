@@ -3,12 +3,17 @@ import { TableLayout } from './../../shared/models/TableLayout.model';
 import { HouseService } from '../house.service';
 import { DataTableStudent } from '../../shared/models/table-house-student.model';
 import { ActivatedRoute } from '@angular/router';
+import { FormControl } from '@angular/forms';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 @Component({
   selector: 'app-sly',
   templateUrl: './sly.component.html',
   styleUrls: ['./sly.component.css']
 })
 export class SlyComponent implements OnInit {
+  filter: FormControl = new FormControl();
+  dataFilter: DataTableStudent[];
+  search;
 
 headerRows = ['name', 'bloodStatus', 'orderOfThePhoenix'];
   tableData: TableLayout;
@@ -25,6 +30,11 @@ headerRows = ['name', 'bloodStatus', 'orderOfThePhoenix'];
       });
       this.callDataTable(this.dataArray);
     });
+    this.filter.valueChanges.pipe(debounceTime(400), distinctUntilChanged())
+      .subscribe((search) => {
+        this.dataFilter = this.houseService.updateFilter(search, this.dataArray);
+        this.callDataTable(this.dataFilter);
+      });
   }
 
   callDataTable(data) {

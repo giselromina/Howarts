@@ -1,20 +1,34 @@
+import { RavenclawStudentComponent } from './ravenclaw-student/ravenclaw-student.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-import { StudentCardComponent } from './student-card/student-card.component';
+import { SlytherinStudentComponent } from './slytherin-student/slytherin-student.component';
+import { HufflepuffStudentComponent } from './hufflepuff-student/hufflepuff-student.component';
+import { GryffindorStudentComponent } from './gryffindor-student/gryffindor-student.component';
+
 
 
 const routes: Routes = [
-  {
-    path: ':id/detail',
-    component: StudentCardComponent
-  }
+
+{
+  path: ':id/gryffindor-Stu',
+  component: GryffindorStudentComponent
+},
+{ path: ':id/hufflepuff-Stu',
+  component: HufflepuffStudentComponent
+},
+{
+  path: ':id/slytherin-Stu',
+  component: SlytherinStudentComponent
+},
+{
+  path: ':id/ravenclaw-Stu',
+  component: RavenclawStudentComponent
+}
 ];
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
 })
 export class StudentRouteModule { }

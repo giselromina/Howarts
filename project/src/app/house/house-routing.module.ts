@@ -12,8 +12,9 @@ const routes: Routes = [
   },
   {
     path: 'Gryffindor',
-    component: GrifiComponent
-  },
+    loadChildren: '../student/student.module#StudentModule',
+    component: GrifiComponent,
+    },
   {
     path: 'Ravenclaw',
     component: RavenComponent

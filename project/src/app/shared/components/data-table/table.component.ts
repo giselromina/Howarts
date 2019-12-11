@@ -75,7 +75,7 @@ export class TableComponent implements AfterViewInit, OnChanges {
     private router: Router,
     public dialog: MatDialog
   ) { }
-
+  @Input() studentRoute: string;
   @Input() tableData: TableLayout;
   @Input() routeBack: Router;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -135,5 +135,5 @@ export class TableComponent implements AfterViewInit, OnChanges {
   }
 
   goBack = () => this.router.navigate([this.routeBack]);
-  navigateToEdit = (id) => this.router.navigate([id, 'edit'], { relativeTo: this.route });
+  navigateToEdit = (id) => this.router.navigate(['']);
 }

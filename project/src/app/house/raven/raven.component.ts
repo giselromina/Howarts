@@ -3,13 +3,17 @@ import { Component, OnInit } from '@angular/core';
 import { HouseService } from '../house.service';
 import { DataTableStudent } from '../../shared/models/table-house-student.model';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FormControl } from '@angular/forms';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 @Component({
   selector: 'app-raven',
   templateUrl: './raven.component.html',
   styleUrls: ['./raven.component.css']
 })
 export class RavenComponent implements OnInit {
-
+filter: FormControl = new FormControl();
+  dataFilter: DataTableStudent[];
+  search;
 
   headerRows = ['name', 'bloodStatus', 'orderOfThePhoenix'];
   tableData: TableLayout;
@@ -27,6 +31,12 @@ export class RavenComponent implements OnInit {
       });
       this.callDataTable(this.dataArray);
     });
+    this.filter.valueChanges.pipe(debounceTime(400), distinctUntilChanged())
+      .subscribe((search) => {
+        this.dataFilter = this.houseService.updateFilter(search, this.dataArray);
+        this.callDataTable(this.dataFilter);
+      });
+
   }
 
   callDataTable(data) {

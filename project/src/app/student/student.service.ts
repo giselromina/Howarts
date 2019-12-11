@@ -12,7 +12,7 @@ export class Studentervice {
   private key = '?key=$2a$10$X2SCQZqUUBQNxISh9p8nWecEMBPBFZzTsgOE7aupfcuOr7HgdHnPy';
   constructor(private http: HttpClient) {
   }
-  public getCharacter(id: string) {
-    return this.http.get(this.studentUrl + 'characters' + id);
+  public getCharacter(id: number): Observable<any> {
+    return this.http.get(this.studentUrl + 'characters' + id + this.key);
   }
 }

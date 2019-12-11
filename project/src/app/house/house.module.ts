@@ -15,6 +15,7 @@ import { RavenComponent } from './raven/raven.component';
 import { SlyComponent } from './sly/sly.component';
 import { HufComponent } from './huf/huf.component';
 import { LayoutModule } from '@angular/cdk/layout';
+
 @NgModule({
   declarations: [HouseListComponent,
     CardHouseComponent,

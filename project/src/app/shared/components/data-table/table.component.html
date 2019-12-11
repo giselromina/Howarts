@@ -8,7 +8,7 @@
     <ng-container matColumnDef="acciones">
       <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
       <mat-cell *matCellDef="let row">
-        <button *ngIf="tableData.canEdit" color="primary" (click)="navigateToEdit(row.id)" mat-icon-button
+        <button *ngIf="tableData.canEdit" color="primary"  (click)="navigateToEdit(row._id)" mat-icon-button
           aria-label="edit">
           <mat-icon>edit</mat-icon>
         </button>
