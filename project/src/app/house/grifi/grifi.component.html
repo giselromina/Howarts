@@ -1,0 +1,6 @@
+<mat-form-field class="filter" *ngIf="dataArray.length>0">
+    <input [formControl]="filter" matInput placeholder="Filtrar...">
+  </mat-form-field>
+<app-list-layout *ngIf="dataArray.length>0" [title]="'Griffyndor Students'" [subtitle]="''" [canAdd]="false">
+    <app-table  [tableData]="tableData" [routeBack]="'/house'" [studentRoute]="'gryffindor-Stu'"></app-table>
+</app-list-layout>

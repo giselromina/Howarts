@@ -1,0 +1,41 @@
+<div>
+  <mat-table class="mat-elevation-z8" [dataSource]="dataSource" matSort aria-label="Elements">
+    <!-- Id Column -->
+    <ng-container matColumnDef="{{column}}" *ngFor="let column of tableData.headerRows">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>{{column | titlecase}}</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row[column] | translateBooleans}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="acciones">
+      <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <button *ngIf="tableData.canEdit" color="primary"  (click)="navigateToEdit(row._id)" mat-icon-button
+          aria-label="edit">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button *ngIf="tableData.canRemove" (click)="openDialog(row.name, row.id)" color="warn" mat-icon-button
+          aria-label="remove">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button *ngIf="tableData.canLock"
+          (click)="openLockDialog(row[tableData.propertyToCheck], row.businessName, row.id)" color="warn"
+          mat-icon-button aria-label="remove">
+          <mat-icon>{{row[tableData.propertyToCheck] ? 'lock' : 'lock_open'}}</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnsToDisplay;"></mat-row>
+  </mat-table>
+  <mat-paginator class="mat-elevation-z8" #paginator [length]="itemsLength" [pageIndex]="0" [pageSize]="50"
+    [pageSizeOptions]="[25, 50, 100, 250]">
+  </mat-paginator>
+
+
+        <div class="btn">
+          <button mat-mini-fab color="accent" style="top: 10px;" (click)="goBack();">Back</button>
+        </div>
+
+
+
+</div>
