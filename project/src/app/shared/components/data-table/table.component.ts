@@ -135,5 +135,5 @@ export class TableComponent implements AfterViewInit, OnChanges {
   }
 
   goBack = () => this.router.navigate([this.routeBack]);
-  navigateToEdit = (id) => this.router.navigate(['']);
+  navigateToEdit = (id) => this.router.navigate(['house']);
 }

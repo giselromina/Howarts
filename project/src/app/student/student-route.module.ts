@@ -11,7 +11,7 @@ import { GryffindorStudentComponent } from './gryffindor-student/gryffindor-stud
 const routes: Routes = [
 
 {
-  path: ':id/gryffindor-Stu',
+  path: '',
   component: GryffindorStudentComponent
 },
 { path: ':id/hufflepuff-Stu',

@@ -1,0 +1,9 @@
+.btn{
+  left: 23px;
+}
+.container{
+  max-width: 500px;
+}
+.mat-form-field{
+  width: 500px !important;
+}

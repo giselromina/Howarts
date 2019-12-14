@@ -1,112 +1,57 @@
-
-<mat-card class="container">
+<mat-card class="container"  >
   <mat-card-title>{{student.name}}</mat-card-title>
-<mat-card-content>
-  <form [formGroup]="student">
-<mat-form-field class="example-full-width">
-        <input
-          matInput
-          placeholder="Role"
-          formControlName="role"
-          type="text"
-        />
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <input
-          matInput
-          placeholder="House"
-          formControlName="house"
-          type="text"
-        />
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <input
-          matInput
-          placeholder="School"
-          formControlName="school"
-          type="text"
-        />
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <input
-          matInput
-          placeholder="Ministry Of Magic"
-          formControlName="ministryOfMagic"
-          type="text"
-        />
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <input
-          matInput
-          placeholder="Order Of The Phoenix"
-          formControlName="orderOfThePhoenix"
-          type="text"
-        />
-      </mat-form-field>
+  <mat-card-content>
+    <form [formGroup]="dataForm">
+      <div class="row">
+        <mat-form-field >
+          <input matInput placeholder="Role" value={{student.role}}  type="text" readonly/>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="House" value={{student.house}}  type="text" />
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="School" value={{student.school}} type="text" />
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Ministry Of Magic" value= {{student.ministryOfMagic|translateBooleans}} type="bool" />
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Order Of The Phoenix"  type="text" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Dumbledore's Army"  type="text" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Death Eater"  type="text" />
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Blood Status"  type="text" />
+        </mat-form-field>
+      </div>
+    </form>
+  </mat-card-content>
 
-      <mat-form-field class="example-full-width">
-        <input
-          matInput
-          placeholder="Dumbledore's Army"
-          formControlName="dumbledoresArmy"
-          type="text"
-        />
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <input
-          matInput
-          placeholder="Death Eater"
-          formControlName="deathEater"
-          type="text"
-        />
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <input
-          matInput
-          placeholder="Blood Status"
-          formControlName="bloodStatus"
-          type="text"
-        />
-      </mat-form-field>
-  </form>
-</mat-card-content>
-<mat-card-footer>
-       <button mat-raised-button type="button"
-                class="btn btn-separator btn-round btn-full-round pull-left" matTooltip="Volver"
-                matTooltipPosition="Student list" (click)="goBack();">
-                <i class="material-icons">arrow_back</i>
-              </button>
-</mat-card-footer>
+  <div>
+    <button mat-fab type="button" class="btn btn-separator btn-round btn-full-round" matTooltip="Volver"
+      (click)="goBack();">
+      <i class="material-icons">arrow_back</i>
+    </button>
+
+  </div>
+
 
 </mat-card>
-
-
-          <!-- <div class="card-body">
-            <dl>
-              <dt>Role:</dt>
-              <dd>{{student.role}}</dd>
-              <dt>House:</dt>
-              <dd>{{student.house}}</dd>
-              <dt>School</dt>
-              <dd>{{student.school}}</dd>
-              <dt>Ministry Of Magic</dt>
-              <dd>{{student.ministryOfMagic}} </dd>
-              <dt>Order of Phoenix</dt>
-              <dd>{{student.orderOfThePhoenix}}</dd>
-              <dt>Dumbledore's Army</dt>
-              <dd>{{student.dumbledoresArmy}}</dd>
-              <dt>Death Eater</dt>
-              <dd>{{student.deathEater}}</dd>
-              <dt>Blood Status</dt>
-              <dd>{{student.bloodStatus}}</dd>
-              <dt>Species</dt>
-              <dd>{{student.species}}</dd>
-              </dl>
-            <form [formGroup]="studentCard" >
-              <button mat-raised-button type="button"
-                class="btn btn-separator btn-round btn-full-round pull-left" matTooltip="Volver"
-                matTooltipPosition="Student list" (click)="goBack();">
-                <i class="material-icons">arrow_back</i>
-              </button>
-            </form>
-          </div> -->

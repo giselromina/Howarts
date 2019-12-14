@@ -24,6 +24,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DeleteDialogComponent } from './components/delete-dialog/delete-dialog.component';
 import { LockDialogComponent } from './components/lock-dialog/lock-dialog.component';
 import { CardComponent } from './components/card/card.component';
+
 @NgModule({
   declarations: [
     TableComponent,
